@@ -9,7 +9,7 @@ import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 export default function page() {
   return (
     <div className="py-[5em]">
-    <Carousel data={slides} />
+    {/* <Carousel data={slides} /> */}
     <Slider />
    <ParallaxProvider>  <Parallax /> </ParallaxProvider>
   </div>
