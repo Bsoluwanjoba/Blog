@@ -18,7 +18,7 @@ export default function Navbar() {
                 <div>
                     <span className="text-xl font-bold cursor-pointer leading-8">
                       <Image src="/android-chrome-512x512.png" alt="logo" height={50} width={50} className="h-10 inline"/>
-                      Kreator's Blog
+                     {` Kreator's Blog`}
                     </span>
                 </div>
 
@@ -26,47 +26,47 @@ export default function Navbar() {
             <Link href="/"  className="text-[15px] hover:text-purple-900 duration-500">
                 <li className="flex flex-row items-center gap-[5px] mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] pd-[70px] duration-500">
                 <span><RiHomeFill /></span>
-                Home
+               {` Home`}
                 </li>
             </Link>
 
             <Link href="/"  className="text-[15px] hover:text-purple-900 duration-500">
                 <li className="flex flex-row items-center gap-[5px]  mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-500">
                     <span><TfiReceipt /></span>
-                Recipe
+                {`Recipe`}
                 </li>
             </Link>
 
             <Link href="/"  className="text-[15px] hover:text-purple-900 duration-500">
              <li className="flex flex-row items-center gap-[5px]  mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-500">
                 <span><FaBloggerB /></span>
-                Blog
+              {`Blog`}
                 </li>
             </Link>
 
             <Link href="/"  className="text-[15px] hover:text-purple-900 duration-500">
             <li className="flex flex-row items-center gap-[5px]  mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-500">
                 <span><IoLogoYoutube /></span>
-                Video Recipe
+                {`Video Recipe`}
                 </li>
             </Link>
 
             <Link href="/"  className="text-[15px] hover:text-purple-900 duration-500">
             <li className="flex flex-row items-center gap-[5px] mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-700">
                 <span><HiOutlineSpeakerphone /></span>
-                About Us
+               {` About Us`}
                 </li>
             </Link>
 
             <Link href="/"  className="text-[15px] hover:text-purple-900 duration-500">
             <li className="flex flex-row items-center gap-[5px]  mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-1000">
                 <span><RiContactsBook2Fill /></span>
-                Contact Us
+               {` Contact Us`}
                 </li>
             </Link>
 
             <button className="bg-[red] text-white duration-700 px-6 py-2 mx-4 font-semiboldhover: rounded">
-            Get a Coupon!
+           {` Get a Coupon!`}
             </button>
         </ul>
      </nav>
