@@ -1,0 +1,17 @@
+{
+    "slides": [
+      {
+        "src": "/images/imag.jpg",
+        "alt": "Image 1 for carousel",
+        "title": "Welcome To Kreator's Chinese Blog"
+      },
+      {
+        "src": "/images/imag1.jpg",
+        "alt": "Image 2 for carousel"
+      },
+      {
+        "src": "/images/imag2.jpg",
+        "alt": "Image 3 for carousel"
+      }
+    ]
+  }
