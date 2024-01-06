@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from './accordion.module.css'
-
+// import React, { useState } from "react";
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import Image from 'next/image';
 
 export const bulls = [
     {
@@ -65,9 +67,22 @@ export const bulls = [
     },
   ];
   
+    
 export default function Accordion() {
+    // const [slide, setSlide] = useState(0);
+
+    // const nextSlide = () => {
+    //   setSlide(slide === data.length - 1 ? 0 : slide + 1);
+    // };
+  
+    // const prevSlide = () => {
+    //   setSlide(slide === 0 ? data.length - 1 : slide - 1);
+    // };
+
+
 const returned = bulls.map(bull =>(
-    <section key={bull.id} className={styles.section} style={{backgroundImage: `url(/images/${bull.image}.jpg)`}}>
+    <section key={bull.id}>
+    <Image src={`/images/${bull.image}.jpg`} alt={bull.title} width={3040} height={1540} className='slides'/>
       <div>
         <span>
             <h2>{bull.title}</h2>
@@ -77,7 +92,7 @@ const returned = bulls.map(bull =>(
     </section>
 ))
   return (
-    <div className={styles.header}>
+    <div className={styles.carousel}>
      {returned}
     </div>
   )
