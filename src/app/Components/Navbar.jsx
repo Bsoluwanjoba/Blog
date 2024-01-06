@@ -6,7 +6,7 @@ import { IoLogoYoutube } from "react-icons/io"
 import { HiOutlineSpeakerphone } from "react-icons/hi"
 import { RiContactsBook2Fill } from "react-icons/ri"
 import Link from 'next/link'
-import styles from './components.module.css'
+import styles from "./components.module.css"
 // import { Parallax } from 'react-scroll-parallax'
 import { Poppins } from "next/font/google"
 import Image from "next/image"
@@ -23,42 +23,42 @@ export default function Navbar() {
                 </div>
 
             <ul className="sm:flex sm:items-center">
-            <Link href='/'  className="text-[15px] hover:text-purple-900 duration-500">
+            <Link href="/"  className="text-[15px] hover:text-purple-900 duration-500">
                 <li className="flex flex-row items-center gap-[5px] mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] pd-[70px] duration-500">
                 <span><RiHomeFill /></span>
                 Home
                 </li>
             </Link>
 
-            <Link href='/'  className="text-[15px] hover:text-purple-900 duration-500">
+            <Link href="/"  className="text-[15px] hover:text-purple-900 duration-500">
                 <li className="flex flex-row items-center gap-[5px]  mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-500">
                     <span><TfiReceipt /></span>
                 Recipe
                 </li>
             </Link>
 
-            <Link href='/'  className="text-[15px] hover:text-purple-900 duration-500">
+            <Link href="/"  className="text-[15px] hover:text-purple-900 duration-500">
              <li className="flex flex-row items-center gap-[5px]  mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-500">
                 <span><FaBloggerB /></span>
                 Blog
                 </li>
             </Link>
 
-            <Link href='/'  className="text-[15px] hover:text-purple-900 duration-500">
+            <Link href="/"  className="text-[15px] hover:text-purple-900 duration-500">
             <li className="flex flex-row items-center gap-[5px]  mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-500">
                 <span><IoLogoYoutube /></span>
                 Video Recipe
                 </li>
             </Link>
 
-            <Link href='/'  className="text-[15px] hover:text-purple-900 duration-500">
+            <Link href="/"  className="text-[15px] hover:text-purple-900 duration-500">
             <li className="flex flex-row items-center gap-[5px] mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-700">
                 <span><HiOutlineSpeakerphone /></span>
                 About Us
                 </li>
             </Link>
 
-            <Link href='/'  className="text-[15px] hover:text-purple-900 duration-500">
+            <Link href="/"  className="text-[15px] hover:text-purple-900 duration-500">
             <li className="flex flex-row items-center gap-[5px]  mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-1000">
                 <span><RiContactsBook2Fill /></span>
                 Contact Us
