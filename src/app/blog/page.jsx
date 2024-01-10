@@ -138,9 +138,9 @@ export const blogs = [
 
 export default function Blog() {
   
-  const reader =blogs.map(blog =>(
-    <Link href={`/kreator/${blog.id}`} title={`${blog.title} of ${blog.author}`}>
-      <div key={blog.id} className=' shadow-2xl rounded-md h-[250px] w-[450px] gap-2' style={{backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.600), rgba(0, 0, 0, 0.600)), url(/images/${blog.image}.jpg)`}}>
+  const reader =blogs.map(blog, idx =>(
+    <Link href={`/kreator/${blog.id}`} title={`${blog.title} of ${blog.author}`} key={idx}>
+      <div key={idx} className=' shadow-2xl rounded-md h-[250px] w-[450px] gap-2' style={{backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.600), rgba(0, 0, 0, 0.600)), url(/images/${blog.image}.jpg)`}}>
     
       </div> 
     

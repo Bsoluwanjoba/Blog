@@ -22,10 +22,10 @@ const [visible, setVisible] = useState(true)
         transition={spring}
         className="bg-red-500 p-4 rounded"
       >
-       Welcome To Kreator's Chinese Recipe Blog
+      {` Welcome To Kreator's Chinese Recipe Blog`}
       </motion.div>
       <button onClick={handleToggle} className="mt-4 p-2 rounded bg-blue-500 text-white">
-        Toggle Visibility
+        {`Toggle Visibility`}
       </button>  
     </div>
   )

@@ -1022,7 +1022,7 @@ export default function Recipes() {
           recipeArray
         ) : (
           // Display "not found" message if no results are found
-          <p className="text-center text-[red] font-bold">No recipes found for '{searchFood}'</p>
+          <p className="text-center text-[red] font-bold">{`No recipes found for '${searchFood}'`}</p>
         )}
       </div>
 
