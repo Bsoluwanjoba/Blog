@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs"
 import Image from "next/image";
 
@@ -16,22 +16,31 @@ export const Carousel = ({ data }) => {
     setSlide(slide === 0 ? data.length - 1 : slide - 1);
   };
 
+  // useEffect(() => {
+  //   // Autoplay functionality
+  //   const autoplayInterval = setInterval(() => {
+  //     nextSlide();
+  //   }, 3000); // Change the interval (in milliseconds) as needed
+
+  //   return () => clearInterval(autoplayInterval); // Cleanup on component unmount
+  // }, [src]);
+
   return (
     <div className="carousel">
       <BsArrowLeftCircleFill onClick={prevSlide} className="arrow arrow-left" />
       {data.map((item, idx) => {
         return (
-          <div key={idx} style={{backgroundImage: `/images/${item.src}`}} className={slide === idx ? "slide" : "slide slide-hidden"}>
-            <span className="text-2xl font-bold text-[yellow]">Welcome To Kreator's Chinese Recipe Blog</span>
-          </div>
-          // <Image
-          //   src={item.src}
-          //   alt={item.alt}
-          //   key={idx}
-          //   width={3040}
-          //   height={1540}
-          //   className={slide === idx ? "slide" : "slide slide-hidden"}
-          // />
+          // <div>
+          //   <span className="text-2xl font-bold text-[yellow]">Welcome To Kreator's Chinese Recipe Blog</span>
+          // </div>
+          <Image
+            src={item.src}
+            alt={item.alt}
+            key={idx}
+            width={3040}
+            height={1540}
+            className={slide === idx ? "slide" : "slide slide-hidden"}
+          />
         );
       })}
       <BsArrowRightCircleFill

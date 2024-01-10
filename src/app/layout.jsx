@@ -3,7 +3,7 @@ import './globals.css'
 import Logobar from './Components/Logobar'
 import Navbar from './Components/Navbar'
 import Tv from './Components/Carousel'
-import Framer from './Components/Framer'
+import Framer from './Components/Cart'
 import Accordion from './Components/Accordion'
 
 const inter = Poppins({ subsets: ['latin'], weight: ['400'] })

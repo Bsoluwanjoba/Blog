@@ -1,7 +1,7 @@
 {
     "slides": [
       {
-        "src": "/images/imag.jpg",
+        "url": "/images/imag.jpg",
         "alt": "Image 1 for carousel",
         "title": "Welcome To Kreator's Chinese Blog"
       },
