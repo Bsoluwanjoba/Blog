@@ -1,0 +1,9 @@
+.border{
+    border-radius: 0 0 100px 100px;
+    border-bottom: 5px solid red;
+ }
+
+.borderr{
+  border-left: 6px solid gold;
+  gap: 10px;
+ }

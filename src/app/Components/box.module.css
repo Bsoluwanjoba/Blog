@@ -1,0 +1,101 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    padding: 20px;
+    color: aquamarine;
+}
+
+
+.accordion{
+    display: flex;
+    width: 500px;
+    height: 500px;
+    gap: 4px;
+    transition: 0.3s;
+    flex-direction: row;
+    color: white;
+    line-height: 1.6em;
+    border: 7px solid;
+  
+    
+}
+.item{
+    background-image: url(/images/imag4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    cursor: pointer;
+    position: relative;
+    flex: 1 1 0%;
+    overflow: hidden;
+    transition: flex .4s;
+    /* top: 0;
+    left: 0;
+    translate: -3% -15%;
+    width: 95%;
+    height: 90%; */
+}
+
+.accordion h2{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 45px;
+    border-bottom: 2px solid white;
+    white-space: nowrap;
+}
+
+.accordion li{
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 80px;
+    border-radius: 50px;
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+.item:hover{
+    flex: 3 1 0%;
+    /* opacity: 0.75; */
+}
+
+.content *{
+    visibility: hidden;
+    opacity: 0;
+    transform-style: preserve-3d;
+}
+
+.item:hover .content *{
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition: all .3s;
+}
+
+.content{
+    background: rgba(0, 0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .4s;
+    z-index: 1;
+    visibility: hidden;
+}
+
+.item:hover .content{
+    visibility: visible;
+}
+
+@media screen and (max-width: 600px) {
+    .accordion{
+        flex-direction: column;
+    }
+}
