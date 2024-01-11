@@ -1,7 +1,6 @@
 import styles from './about.module.css'
 import { GoArrowUp } from "react-icons/go"
 import Image from 'next/image'
-import { blogs } from '../blog/page'
 import Link from 'next/link'
 
 export default function page() {
@@ -15,8 +14,8 @@ export default function page() {
       </div> 
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
-       <p>{`Kreator's Chinese Recipe Blog is a culinary haven for enthusiasts seeking authentic and delectable Chinese recipes. With a diverse array of dishes ranging from vibrant salads to savory main courses, the blog caters to all tastes and skill levels. Each recipe is thoughtfully curated, providing detailed instructions and insights into Chinese culinary traditions.`}</p>
-       <p> {`Kreator's commitment to simplicity and flavor ensures that even novice cooks can recreate the magic of Chinese cuisine in their own kitchens. Explore the blog for a delightful journey through the rich tapestry of Chinese flavors, expertly crafted by Kreator's passion for culinary excellence.`}</p>
+       <p>{`Kreator\'s Chinese Recipe Blog is a culinary haven for enthusiasts seeking authentic and delectable Chinese recipes. With a diverse array of dishes ranging from vibrant salads to savory main courses, the blog caters to all tastes and skill levels. Each recipe is thoughtfully curated, providing detailed instructions and insights into Chinese culinary traditions.`}</p>
+       <p> {`Kreator\'s commitment to simplicity and flavor ensures that even novice cooks can recreate the magic of Chinese cuisine in their own kitchens. Explore the blog for a delightful journey through the rich tapestry of Chinese flavors, expertly crafted by Kreator's passion for culinary excellence.`}</p>
       </div>
 
      
