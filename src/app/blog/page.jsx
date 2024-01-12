@@ -2,7 +2,7 @@ import styles from './blog.module.css'
 import Link from 'next/link'
 import Image from 'next/image';
 
-const blogs = [
+export const blogs = [
   {
     id: '001',
     image: 'meat',
@@ -138,20 +138,20 @@ const blogs = [
 
 export default function Blog() {
   
-  const reader = blogs.map (food, idx =>(
-    <Link href={`/kreator/${ food.id}`} title={`${food.title} of ${food.author}`} key={idx}>
-      <div key={idx} className=' shadow-2xl rounded-md h-[250px] w-[450px] gap-2' style={{backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.600), rgba(0, 0, 0, 0.600)), url(/images/${food.image}.jpg)`}}>
+  const reader =blogs.map(blog =>(
+    <Link href={`/kreator/${blog.id}`} title={`${blog.title} of ${blog.author}`}>
+      <section key={blog.id} className=' shadow-2xl rounded-md h-[250px] w-[450px] gap-2' style={{backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.600), rgba(0, 0, 0, 0.600)), url(/images/${blog.image}.jpg)`}}>
     
-      </div> 
+      </section> 
     
       <section className='leading-7'>
-      <h2 className='font-extrabold tracking-[2.8px] mt-[25px] text-[red]'>{food.title}</h2>
-      <p>{food.description}</p>
+      <h2 className='font-extrabold tracking-[2.8px] mt-[25px] text-[red]'>{blog.title}</h2>
+      <p>{blog.description}</p>
      
-      <div className='flex gap-[10px] items-center border-l-[4px] border-[gold] pl-[7px] top-[20%]'>
-      <Image src={`https://robohash.org/${food.author}`} alt='author' width={50} height={50} />
-      <p className='font-bold items-center'> {food.author} <br />
-      <span className='text-[12px]'>{food.date}</span>
+      <div className='flex gap-[10px] items-center border-l-[4px] border-[red] pl-[7px] top-[20%]'>
+      <Image src={`https://robohash.org/${blog.author}`} alt='author' width={50} height={50} />
+      <p className='font-bold items-center'> {blog.author} <br />
+      <span className='text-[12px]'>{blog.date}</span>
       </p>
       </div>
     
@@ -163,9 +163,9 @@ export default function Blog() {
 
   return (
     <section>
-      <div className={`${styles.head} md:w-[30%] lg:w-full`}>
+      <div className={styles.head}>
         <div className='flex flex-col justify-center items-center h-64 text-white mt-[55px]'>
-        <Image src={`https://robohash.org/102.89.42.120.png`}  alt='author' height={100} width={100} className={`${styles.image} bg-white mx-auto mb-4`}/>
+        <Image src={`https://robohash.org/102.89.42.120.png`}  alt='author' height={100} width={100} className={`${styles.image} bg-white`}/>
         <p className='text-white text-[15px] mt-[10px]'>Blog compiled by Kreator</p>
     </div>
       </div>

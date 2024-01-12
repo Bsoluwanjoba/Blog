@@ -80,8 +80,8 @@ export default function Navbar() {
                 </li>
             </Link>
 
-            <button className="bg-[red] duration-700 px-6 py-2 mx-4 font-medium rounded text-[yellow] hover:shadow-2xl">
-           {` Get a Coupon!`}
+            <button className="bg-[red] duration-700 px-6 py-2 mx-4 font-normal rounded text-[yellow] hover:shadow-2xl">
+           {` Buy me a Coffee!`}
             </button>
         </ul>
 

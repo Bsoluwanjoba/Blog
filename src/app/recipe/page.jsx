@@ -5,7 +5,9 @@ import Link from 'next/link'
 import { FaRegClock } from "react-icons/fa"
 import Container from 'postcss/lib/container'
 import styles from './recipe.module.css'
-import Head from '../Components/Head'
+import { useEffect } from 'react';
+import { useSpring, animated } from 'react-spring';
+
 
 export const foods = [
   {
@@ -46,7 +48,7 @@ export const foods = [
   {
     id: '002',
     image: "dish",
-    title: "Beef and Broccoli Stir-Fry( 西兰花炒)",
+    title: "Beef and Broccoli Stir-Fry( 西兰)",
     type: "Beef Dish",
     category: "Main Dish",
     ingredients: ["Beef sirloin", "Broccoli florets", "Soy sauce", "Oyster sauce", "Ginger", "Garlic", "Sesame oil", "Cornstarch"],
@@ -127,7 +129,7 @@ export const foods = [
   {
     id: '005',
     image: "dish29",
-    title: "Eggplant in Garlic Sauce(蒜蓉茄子)",
+    title: "Eggplant in Garlic Sauce(蒜蓉)",
     type: "Vegetarian Dish",
     category: "Main Dish",
     ingredients: ["Eggplant", "Soy sauce", "Black bean sauce", "Garlic", "Ginger", "Sesame oil", "Green onions"],
@@ -354,7 +356,7 @@ export const foods = [
   {
     id: '014',
     image: 'dish28',
-    title: "Vegetable and Tofu Soup(玉米蟹汤)",
+    title: "Vegetable and Tofu Soup(玉米蟹)",
     type: "Vegetarian Soup",
     category: "Soup",
     ingredients: ["Vegetable broth", "Tofu", "Bok choy", "Carrots", "Mushrooms", "Soy sauce", "Sesame oil"],
@@ -408,7 +410,7 @@ export const foods = [
   {
      id: '016',
     image: 'dish19',
-    title: "Sichuan Noodle Salad(四川面条沙拉)",
+    title: "Sichuan Noodle Salad(四川面条沙)",
     type: "Noodle Salad",
     category: "Salad",
     ingredients: ["Cold noodles", "Shredded chicken", "Cucumbers", "Peanuts", "Sichuan-style dressing"],
@@ -571,7 +573,7 @@ export const foods = [
   {
      id: '022',
     image: 'dish13',
-    title: "Five-Spice Beef Salad(五香牛肉沙拉)",
+    title: "Five-Spice Beef Salad(五香牛肉)",
     type: "Beef Salad",
     category: "Salad",
     ingredients: ["Thinly sliced beef", "Mixed greens", "Cherry tomatoes", "Five-spice powder"],
@@ -652,7 +654,7 @@ export const foods = [
   {
     id: '025',
     image: 'dish40',
-    title: "Spinach and Tofu Soup(菠菜豆腐汤)",
+    title: "Spinach and Tofu Soup(菠菜豆)",
     category: "Soup",
     ingredients: ["Vegetable broth", "Tofu", "Spinach", "Garlic", "Soy sauce", "Sesame oil", "White pepper"],
    preparation: [
@@ -678,7 +680,7 @@ export const foods = [
   {
     id: '026',
     image: 'dish41',
-    title: "Beef and Noodle Soup(牛肉面汤",
+    title: "Beef and Noodle Soup(牛肉面汤)",
     category: "Soup",
     ingredients: ["Beef broth", "Beef sirloin", "Rice noodles", "Bok choy", "Ginger", "Garlic", "Soy sauce"],
     preparation: [
@@ -783,7 +785,7 @@ export const foods = [
   id: '030',
   image: 'dish39',
   category: "Main Dish",
-  title: "Stir-Fried Beef with Broccoli (西兰花)",
+  title: "Stir-Fried Beef with Broccoli (西)",
   ingredients: ["Beef", "Broccoli", "Soy sauce", "Oyster sauce"],
   preparation: [
       "Trim excess fat from the pork loin and cut it into bite-sized pieces. Pat the pork pieces dry with paper towels.",
@@ -1007,13 +1009,42 @@ export default function Recipes() {
    </section> 
   ))
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  const slideInLeft = useSpring({
+    opacity: isVisible ? 1 : 0,
+    marginLeft: isVisible ? 0 : -50,
+    from: { opacity: 0, marginLeft: -50 },
+    config: { duration: 800 },
+  });
+   const handleScroll = () => {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    setIsVisible(scrollY > 10); // You can adjust the scroll threshold as needed
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
   <div>
-  <Head />
+      <section className='my-[-5em]'>
+      <div className={`${styles.head}`}>
+          <div className='flex flex-col justify-center items-center h-[60vh] text-white'>
+            <h1 className='text-7xl font-normal'>Our Recipes</h1>
+            <h2 className='1xl'>Feel free to pick from our variety of recipes</h2>
+          </div>
+      </div>
 
-<section className='py-[6em]'>
+      </section>
+
+      <animated.div style={slideInLeft}>
+      <section className='py-[6em]'>
            <form className='flex items-center justify-center py-[2em]' onSubmit={onSubmit}>
-      <input type="search" name="search" id="search" placeholder='Search For Food & Categories' className={`w-3/5 outline-8 rounded-[40px] border-[3px] border-[red] border-solid my-5 m-auto focus:shadow-2xl ${styles.sear}`} defaultValue={searchFood} onChange={(e) => handleSearch(e.target.value)}/>
+      <input type="search" name="search" id="search" placeholder='Search For Food & Categories' className={`w-3/5 outline-8 rounded-[40px] border-[3px] border-[red] border-solid my-5 m-auto focus:shadow-2xl p-[10px] ${styles.sear}`} defaultValue={searchFood} onChange={(e) => handleSearch(e.target.value)}/>
     </form>
 
     <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-10 py-[10px] w-[95%] m-auto">
@@ -1030,6 +1061,9 @@ export default function Recipes() {
         {recipeArray}
       </div>
     </section>
+   
+      </animated.div>
+
   </div>
   
   )

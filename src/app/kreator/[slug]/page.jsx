@@ -6,9 +6,9 @@ import styles from './kreator.module.css'
 
 
 export default function Page({params}) {
-    const blogCard = blogs.find(blog => blog.id == params.sim)
+    const blogCard = blogs.find(blog => blog.id == params.slug)
 
-    const filteredBlogs = blogs.filter(blog => blog.title !== blogCard.title)
+    const filteredBlogs = blogs.filter(blog => blog.image !== blogCard.image)
   return (
     <div className='py-[5em]'>
         <div className={styles.header}>
@@ -16,8 +16,8 @@ export default function Page({params}) {
         </div>
 
                   <section className='w-[80%] m-auto'>
-                      <div className='text-center'>
-                        <div style={{backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.600), rgba(0, 0, 0, 0.600)), url(/images/${blogCard.image}.jpg)`}} className={`h-[450px] w-[850px] bg-cover mt-[-50px] ml-[170px] shadow-2xl, ${styles.main} `}> 
+                      <div className='text-center '>
+                        <div style={{backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.600), rgba(0, 0, 0, 0.600)), url(/images/${blogCard.image}.jpg)`}} className={`h-[550px] md:h-[450px] w-[400px] md:w-[850px] bg-cover mt-[-50px] md:ml-[170px] shadow-2xl, ${styles.main} `}> 
                       
                             <div className='mt-[230px]'>
                           <span className='text-white font-semibold text-[22px] py-[7em] tracking-widest'> {blogCard.title} </span> <br />
@@ -31,8 +31,8 @@ export default function Page({params}) {
                         </div>
 
                         <div className='p-[10px] text-start mt-[50px]'>
-                          <p className='font-semibold text-[28px] underline tracking-wider text-center text-[red]'>{blogCard.title}</p>
-                         <p className='tracking-wider leading-10 indent-16'> {blogCard.details}</p>
+                          <p className='font-semibold text-[22px] underline tracking-wider text-center text-[red]'>{blogCard.title}</p>
+                         <p className='tracking-wider leading-10 indent-16 text-justify'> {blogCard.details}</p>
                         </div>
                       </div>
 
@@ -40,9 +40,9 @@ export default function Page({params}) {
 
 
                               <section className='py-[7em]'>
-                                <h2 className='text-[25px] font-bold text-[red] border-l-[4px] border-black pl-[7px] top-[50%] bottom-0'>Read More Of Our Amazing Blogs...</h2>
+                                <h2 className='text-[20px] md:text-[25px] font-bold text-[red] border-l-[4px] border-black pl-[7px] top-[50%] bottom-0'>Read More Of Our Amazing Blogs...</h2>
 
-                              <p className='py-[2em] grid grid-cols-3 gap-[38px] leading-10'>   
+                              <p className='py-[2em] grid grid-cols-1 md:grid-cols-3 gap-[38px] leading-10'>   
                                 {filteredBlogs.map((buk, index) => (
                                           <section key={index}>
                                               <Link href={`/kreator/${buk.id}`} title={`${buk.title} of ${buk.author}`}>

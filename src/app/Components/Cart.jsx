@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 // import styles from './pc.module.css'
 
@@ -9,20 +10,20 @@ export default function PopularCategories() {
      <p className='text-black ml-5 md:mr-4 text-[16px] font-thin mt-[15px]'>Be sure not to miss out this categories. Enjoy trying them out!</p>
     </div>
 
-    <section className='flex flex-wrap md:flex-col lg:flex-row ml-[40px]'>
+    <section className='flex flex-wrap md:flex-col lg:flex-row ml-[40px] cursor-pointer'>
     <div style={{backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.650), rgba(0, 0, 0, 0.650)), url(/images/dish43.jpeg)`}} className='bg-cover bg-no-repeat w-full md:w-[350px] h-[250px] md:mr-4 mt-4 md:mt-0 rounded'>
-        <h1 className='mt-[180px] ml-4 md:ml-4 tracking-wider text-white'>Main Dish</h1>
-        <p className='font-thin text-[14px] ml-4 md:ml-4 text-white'>View All Recipes</p>
+        <Link href='./recipe/maindish'><h1 className='mt-[180px] ml-4 md:ml-4 tracking-wider text-white'>Main Dish</h1>
+        <p className='font-thin text-[14px] ml-4 md:ml-4 text-white'>View All Recipes</p></Link>
     </div>
 
     <div style={{backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.650), rgba(0, 0, 0, 0.650)), url(/images/dish44.jpeg)`}} className='bg-cover bg-no-repeat w-full md:w-[350px] h-[250px] md:mr-4 mt-4 md:mt-0 rounded'>
-        <h1 className='mt-[180px] ml-4 md:ml-4 tracking-wider text-white'>Salad</h1>
-        <p className='font-thin text-[14px] ml-4 md:ml-4 text-white'>View All Recipes</p>
+    <Link href='./recipe/salad'><h1 className='mt-[180px] ml-4 md:ml-4 tracking-wider text-white'>Salad</h1>
+        <p className='font-thin text-[14px] ml-4 md:ml-4 text-white'>View All Recipes</p></Link>
     </div>
 
     <div style={{backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.650), rgba(0, 0, 0, 0.650)), url(/images/dish46.jpeg)`}} className='bg-cover bg-no-repeat w-full md:w-[350px] h-[250px] mt-4 md:mt-0 rounded'>
-        <h1 className='mt-[180px] ml-4 md:ml-4 tracking-wider text-white'>Soup</h1>
-        <p className='font-thin text-[14px] ml-4 md:ml-4 text-white'>View All Recipes</p>
+    <Link href='./recipe/soups'><h1 className='mt-[180px] ml-4 md:ml-4 tracking-wider text-white'>Soup</h1>
+        <p className='font-thin text-[14px] ml-4 md:ml-4 text-white'>View All Recipes</p></Link>
     </div>
 </section>
 

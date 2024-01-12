@@ -1,9 +1,9 @@
 .header{
-    background-image: radial-gradient(rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 0.700)), url(/maindish/dish30.jpg);
+    background-image: radial-gradient(rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 0.700)), url(/images/dish30.jpg);
     background-size: cover;
     border-bottom: 5px solid red;
     border-radius: 0 0 100px 100px;
-    height: 50vh;
+    height: 60vh;
   }
   .center{
       align-items: center;
@@ -16,5 +16,5 @@
   }
   
   .main{
-      border: 10px solid red;
+      border: 7px solid red;
   }

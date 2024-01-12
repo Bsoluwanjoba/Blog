@@ -5,12 +5,12 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
-      <section>
-         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 items-stretch gap-32 ml-[135px] py-12 w-[90%]">
+    <footer className={`${styles.footer} lg:h-[50vh]`}>
+      <section className='lg:h-[50vh]'>
+         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 items-stretch gap-32 ml-[60px] md:ml-[105px] py-12 w-[90%] md:w-[60%] lg:w-[90%]">
       <div className='mt-[8px]'>
-      <Image src='/bg/kr.png' alt='logo' width={100} height={100} className='ml-[65px]'/>
-      <p className='-mt-[30px] text-[11px]'>Taking you closer to the Chinese food fantasies</p>
+      <Image src='/android-chrome-512x512.png' alt='logo' width={100} height={100} className='ml-[65px] shadow-inner'/>
+      <p className='mt-[30px] text-[13px]'>Taking you closer to the Chinese food fantasies</p>
       </div>
 
      <div>
@@ -46,13 +46,13 @@ export default function Footer() {
      
       
 
-        <div className='flex justify-center border-[gray] border-t-2 border-b-2'>
-        <ul className='-ml-[210px] text-white tracking-widest text-[13px]'>
+        <div className='flex justify-center border-[gray] w-[50%] md:w-[60%] pb-[40px] ml-[75px]'>
+        <ul className='ml-[-100px] md:mr-[-310px] text-black font-semibold tracking-widest text-[13px]'>
          Copyright &copy;Kreator   Powered By <Link href="https://vercel.com/kreators-projects">Vercel io</Link>
         </ul>
 
           <div>
-          <ul className='flex justify-center items-stretch gap-2 tracking-widest text-[13px] -mr-[700px]'>
+          <ul className='flex justify-center items-stretch gap-2 tracking-widest text-[13px] mr-[-200px] md:mr-[-1000px] font-semibold'>
            <Link href='/recipes'> <li>Recipes</li> </Link>
             <Link href='/blog'> <li>Blog</li>  </Link>
            <Link href='/about'>  <li>About Us</li> </Link>
