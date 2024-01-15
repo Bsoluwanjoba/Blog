@@ -11,8 +11,8 @@ import { MdOutlineCancel } from "react-icons/md"
 import React, {useState} from 'react'
 import Link from 'next/link'
 import styles from "./components.module.css"
-// import { Parallax } from 'react-scroll-parallax'
 import Image from "next/image"
+
 
 const le = Lemon({subsets: ['latin'], weight: ['400']})
 
@@ -24,10 +24,9 @@ export default function Navbar() {
       setShowNav(!showNav)
     }
   
-
+ 
   return (
-    // <Parallax speed={-8}>
-             <nav className="p-5 bg-white shadow fixed right-0 left-0 md:flex md:items-center md:justify-around">
+            <nav className="p-5 bg-white shadow fixed right-0 left-0 md:flex md:items-center md:justify-around">
                 <div>
                     <span className={`${le.className}`}>
                       <Image src="/android-chrome-512x512.png" alt="logo" height={50} width={50} className="h-10 inline"/>
@@ -38,7 +37,7 @@ export default function Navbar() {
                 <RxHamburgerMenu  className={`${showNav ? 'hidden' : 'block md:hidden'} ml-auto mt-[-33px] cursor-pointer text-[30px]`} onClick={onClick} />
                 <MdOutlineCancel className={`${showNav ? 'block md:hidden' : 'hidden'} ml-auto mt-[-33px] cursor-pointer text-[30px]`} onClick={onClick} />
             <ul className={`md:flex md:flex-row ${showNav ? 'flex' : 'hidden'} flex-col justify-between md:h-10 h-[60vh] items-center cursor-pointer`}>
-            <Link href="/"  className="text-[15px] hover:text-[red] duration-500">
+            <Link href="/"  className={` text-[15px] hover:text-[red] duration-500`}>
                 <li className="flex flex-row items-center gap-[5px] mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] pd-[70px] duration-500">
                 <span><RiHomeFill /></span>
                {` Home`}
@@ -80,7 +79,7 @@ export default function Navbar() {
                 </li>
             </Link>
 
-            <button className="bg-[red] duration-700 px-6 py-2 mx-4 font-normal rounded text-[yellow] hover:shadow-2xl">
+            <button className="bg-[red] duration-700 px-6 py-2 mx-4 font-normal rounded text-[gold] hover:shadow-2xl">
            {` Buy me a Coffee!`}
             </button>
         </ul>

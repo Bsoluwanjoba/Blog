@@ -6,7 +6,7 @@ export default function PopularCategories() {
   return (
     <section className='w-[80%] py-[5em] m-auto'>
     <div className='md:w-1/2 leading-[40px] md:ml-8 md:mb-8 lg:ml-[300px] '>
-    <h1 className='ml-[49px] lg:ml-[20px] text-4xl text-black font-black gap-2 tracking-widest leading-6 md:text-[48px]'>Recipes Category</h1>
+    <h1 className='ml-[49px] lg:ml-[20px] text-4xl text-black font-black gap-2 tracking-widest leading-6 md:text-[40px]'>RECIPES CATEGORY</h1>
      <p className='text-black ml-5 md:mr-4 text-[16px] font-thin mt-[15px]'>Be sure not to miss out this categories. Enjoy trying them out!</p>
     </div>
 

@@ -6,6 +6,7 @@ import Comments from './Components/Comments'
 import Suscribe from './Components/Suscribe'
 import { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
+import Demo from './Components/Demo'
 
 
 
@@ -39,6 +40,7 @@ export default function page() {
     
       <animated.div style={slideInLeft}>
       <Cart />
+      <Demo />
       <Comments />
       <Suscribe />
       </animated.div>

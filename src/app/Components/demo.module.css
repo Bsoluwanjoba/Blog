@@ -5,7 +5,7 @@
     min-height: 100vh;
     padding: 20px;
     color: aquamarine;
- 
+    
   }
   
   .accordion {
@@ -18,11 +18,61 @@
     color: white;
     line-height: 1.6em;
     border: 7px solid;
+    margin-left: 498px;
+    padding-top: 40px;
   
   }
   
   .item {
     background-image: url(/images/imag4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    cursor: pointer;
+    position: absolute;
+    flex: 1 1 0%;
+    overflow: hidden;
+    transition: flex 0.4s;
+    /* z-index: -2; */
+  }
+  .item1 {
+    background-image: url(/images/imag6.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    cursor: pointer;
+    position: absolute;
+    flex: 1 1 0%;
+    overflow: hidden;
+    transition: flex 0.4s;
+    /* z-index: -2; */
+  }
+  .item2 {
+    background-image: url(/images/imag3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    cursor: pointer;
+    position: absolute;
+    flex: 1 1 0%;
+    overflow: hidden;
+    transition: flex 0.4s;
+    /* z-index: -2; */
+  }
+  .item3 {
+    background-image: url(/images/imag1jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    cursor: pointer;
+    position: absolute;
+    flex: 1 1 0%;
+    overflow: hidden;
+    transition: flex 0.4s;
+    /* z-index: -2; */
+  }
+  .item4 {
+    background-image: url(/images/imag2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
@@ -54,6 +104,18 @@
   .item:hover {
     flex: 3 1 0%;
   }
+  .item1:hover {
+    flex: 3 1 0%;
+  }
+  .item2:hover {
+    flex: 3 1 0%;
+  }
+  .item3:hover {
+    flex: 3 1 0%;
+  }
+  .item4:hover {
+    flex: 3 1 0%;
+  }
   
   .content * {
     visibility: hidden;
@@ -62,6 +124,30 @@
   }
   
   .item:hover .content * {
+    visibility: visible;
+    opacity: 0.9;
+    transform: none;
+    transition: all 0.3s;
+  }
+  .item1:hover .content * {
+    visibility: visible;
+    opacity: 0.9;
+    transform: none;
+    transition: all 0.3s;
+  }
+  .item2:hover .content * {
+    visibility: visible;
+    opacity: 0.9;
+    transform: none;
+    transition: all 0.3s;
+  }
+  .item3:hover .content * {
+    visibility: visible;
+    opacity: 0.9;
+    transform: none;
+    transition: all 0.3s;
+  }
+  .item4:hover .content * {
     visibility: visible;
     opacity: 0.9;
     transform: none;
@@ -86,6 +172,18 @@
   }
   
   .item:hover .content {
+    visibility: visible;
+  }
+  .item1:hover .content {
+    visibility: visible;
+  }
+  .item2:hover .content {
+    visibility: visible;
+  }
+  .item3:hover .content {
+    visibility: visible;
+  }
+  .item4:hover .content {
     visibility: visible;
   }
   

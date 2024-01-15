@@ -4,7 +4,7 @@ export const metadata = {
     description: 'Bringing food recipes closer to your doorstep ',
   }
   
-  export default function ({ children }) {
+  export default function videorecipe ({ children }) {
     return (
       <div>
        {children}   

@@ -9,7 +9,7 @@ import { useSpring, animated } from 'react-spring';
 const soupFood = foods.filter(food => food.category == 'Soup')
 
 const foodCategory = soupFood.map(food => (
-  <Link href={`/chinese/${food.id}`} title={`${food.category} of ${food.title}`}>
+  <Link href={`/chinese/${food.id}`} title={`${food.category} of ${food.title}`} key={food.id}>
   <section key={food.id} style={{backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.600), rgba(0, 0, 0, 0.600)), url(/images/${food.image}.jpeg)`}}
   className='shadow-2xl rounded-md h-[250px] w-[350px] gap-2'>
 
