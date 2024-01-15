@@ -28,7 +28,7 @@ const foodCategory = saladFood.map(food => (
     </section>
     </Link>
 ))
-export default function page() {
+export default function Page() {
   const [isVisible, setIsVisible] = useState(false);
 
   const slideInLeft = useSpring({

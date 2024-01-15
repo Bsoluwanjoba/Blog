@@ -8,7 +8,7 @@ import { useSpring, animated } from 'react-spring';
 
 const main = foods.filter(food => food.category == 'Main Dish')
 
-export default function page() {
+export default function Page() {
     const array = main.map(food => (
         <section key={food.id} style={{backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.600), rgba(0, 0, 0, 0.600)), url(/images/${food.image}.jpeg)`}} className='shadow-2xl rounded-md h-[250px] w-[350px] gap-2'>
           <Link href={`/chinese/${food.id}`} title={`${food.category} of ${food.title}`}>

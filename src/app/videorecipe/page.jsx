@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 
 
-export default function page() {
+export default function Page() {
   const [isVisible, setIsVisible] = useState(false);
 
   const slideInLeft = useSpring({

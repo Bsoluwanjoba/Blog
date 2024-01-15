@@ -12,7 +12,7 @@ import Demo from './Components/Demo'
 
 
 
-export default function page() {
+export default function Page() {
   const [isVisible, setIsVisible] = useState(false);
 
   const slideInLeft = useSpring({
