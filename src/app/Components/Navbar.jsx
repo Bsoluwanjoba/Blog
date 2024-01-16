@@ -16,76 +16,68 @@ import Image from "next/image"
 
 const le = Lemon({subsets: ['latin'], weight: ['400']})
 
+    const navItems = [
+        { text: 'Home', icon: <RiHomeFill />, link: '/' },
+        { text: 'Recipe', icon: <TfiReceipt />, link: '/recipe' },
+        { text: 'Blog', icon: <FaBloggerB />, link: '/blog' },
+        { text: 'Video Recipe', icon: <IoLogoYoutube />, link: '/videorecipe' },
+        { text: 'About Us', icon: <HiOutlineSpeakerphone />, link: '/about' },
+        { text: 'Contact Us', icon: <RiContactsBook2Fill />, link: '/contact' },
+      ]
+
 export default function Navbar() {
     const [showNav, setShowNav] = useState(false)
 
 
-    function onClick(){
+    function toggleNav(){
       setShowNav(!showNav)
     }
   
  
   return (
-            <nav className="p-5 bg-white shadow fixed right-0 left-0 md:flex md:items-center md:justify-around">
-                <div>
-                    <span className={`${le.className}`}>
-                      <Image src="/android-chrome-512x512.png" alt="logo" height={50} width={50} className="h-10 inline"/>
-                     {` Kreator's Blog`}
-                    </span>
-                </div>
+        <header>
+                 <nav className="p-5 bg-white shadow fixed right-0 left-0 md:flex md:items-center md:justify-around max-w-full flex-wrap">
+      <div>
+        <span>
+                        <span className={`${le.className}`}>
+                       <Image src="/android-chrome-512x512.png" alt="logo" height={50} width={50} style={{width: "full", height: "full"}} className="h-10 inline"/>
+                      {` Kreator's Blog`}
+                     </span>
+        </span>
+      </div>
 
-                <RxHamburgerMenu  className={`${showNav ? 'hidden' : 'block md:hidden'} ml-auto mt-[-33px] cursor-pointer text-[30px]`} onClick={onClick} />
-                <MdOutlineCancel className={`${showNav ? 'block md:hidden' : 'hidden'} ml-auto mt-[-33px] cursor-pointer text-[30px]`} onClick={onClick} />
-            <ul className={`md:flex md:flex-row ${showNav ? 'flex' : 'hidden'} flex-col justify-between md:h-10 h-[60vh] items-center cursor-pointer`}>
-            <Link href="/"  className={` text-[15px] hover:text-[red] duration-500`}>
-                <li className="flex flex-row items-center gap-[5px] mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] pd-[70px] duration-500">
-                <span><RiHomeFill /></span>
-               {` Home`}
-                </li>
-            </Link>
+      <div className={`${showNav ? 'hidden' : 'block md:hidden'}`}>
+        <RxHamburgerMenu
+          className={`block ml-auto mt-[-33px] cursor-pointer text-[30px]`}
+          onClick={toggleNav}
+        />
+      </div>
 
-            <Link href="/recipe"  className="text-[15px] hover:text-[red] duration-500">
-                <li className="flex flex-row items-center gap-[5px]  mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-500">
-                    <span><TfiReceipt /></span>
-                {`Recipe`}
-                </li>
-            </Link>
+      <div className={`${showNav ? 'block md:hidden' : 'hidden'}`}>
+        <MdOutlineCancel
+          className="ml-auto mt-[-33px] cursor-pointer text-[30px]"
+          onClick={toggleNav}
+        />
+      </div>
 
-            <Link href="/blog"  className="text-[15px] hover:text-[red] duration-500">
-             <li className="flex flex-row items-center gap-[5px]  mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-500">
-                <span><FaBloggerB /></span>
-              {`Blog`}
-                </li>
-            </Link>
+      <ul className={`md:flex md:flex-row ${showNav ? 'flex' : 'hidden'} flex-col justify-between md:h-[50px] h-[55vh] items-center cursor-pointer flex-wrap`}>
+        {navItems.map((item, index) => (
+          <Link key={index} href={item.link} className="text-[14px] hover:text-[red] ease-in-out duration-500 flex-shrink">
+            <li className="flex flex-row items-center gap-[5px] mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] pd-[70px] duration-500">
+              <span>{item.icon}</span>
+              {item.text}
+            </li>
+          </Link>
+        ))}
 
-            <Link href="/videorecipe"  className="text-[15px] hover:text-[red] duration-500">
-            <li className="flex flex-row items-center gap-[5px]  mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-500">
-                <span><IoLogoYoutube /></span>
-                {`Video Recipe`}
-                </li>
-            </Link>
-
-            <Link href="/about"  className="text-[15px] hover:text-[red] duration-500">
-            <li className="flex flex-row items-center gap-[5px] mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-700">
-                <span><HiOutlineSpeakerphone /></span>
-               {` About Us`}
-                </li>
-            </Link>
-
-            <Link href="/contact"  className="text-[15px] hover:text-[red] duration-500">
-            <li className="flex flex-row items-center gap-[5px]  mx-4 my-3 hover:border-b-[5px] border-solid border-[gold] duration-1000">
-                <span><RiContactsBook2Fill /></span>
-               {` Contact Us`}
-                </li>
-            </Link>
-
-            <button className="bg-[red] duration-700 px-6 py-2 mx-4 font-normal rounded text-[gold] hover:shadow-2xl">
+<button className="bg-[red] duration-700 px-6 py-2 mx-4 font-normal rounded text-[gold] hover:shadow-2xl flex-wrap">
            {` Buy me a Coffee!`}
             </button>
-        </ul>
+      </ul>
 
-      
-     </nav>
-    // </Parallax>
+       </nav>
+        </header>
+
+    
   )
 }

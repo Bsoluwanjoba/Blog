@@ -32,7 +32,7 @@ export default function New() {
       
   return (
     <div className="relative w-full max-w-[1000px]">
-  <div className="relative overflow-hidden rounded-md md:w-full lg:w-[1499px] z-[-1]">
+  <div className="relative overflow-hidden rounded-md w-full md:w-[1499px] z-[-1]">
     <div className="flex transition-transform duration-300 ease-in-out transform -translate-x-full" style={{ width: `${images.length}00%`, transform: `translateX(-${currentImage * 100}%)` }}>
       {images.map((image, index) => (
         <div key={index} className="relative w-full h-auto flex-shrink-0">
